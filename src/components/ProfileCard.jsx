@@ -81,6 +81,20 @@ function ProfileCard({ data }) {
             <span className="text-xl">🏢</span> <span>{data.company}</span>
           </p>
         )}
+
+        {data.blog && (
+          <p className="flex items-center gap-3">
+            <span className="text-xl">🔗</span>
+            <a 
+              href={data.blog.startsWith('http') ? data.blog : `https://${data.blog}`} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="hover:text-blue-400 transition truncate hover:underline"
+            >
+              {data.blog}
+            </a>
+          </p>
+        )}
       </div>
 
       {/* BUTTON: Gradient Background to make it pop */}
